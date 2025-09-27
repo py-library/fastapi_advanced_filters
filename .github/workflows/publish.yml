@@ -1,0 +1,72 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python - --version 1.8.5
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Cache Poetry
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pypoetry
+          key: poetry-${{ runner.os }}-${{ hashFiles('poetry.lock') }}
+          restore-keys: |
+            poetry-${{ runner.os }}-
+
+      - name: Install (main) dependencies
+        run: |
+          poetry install --no-root --only main
+
+      - name: Verify tag matches pyproject version
+        id: version
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/}"
+          echo "Tag: $TAG_VERSION"
+          PYPROJECT_VERSION=$(python - <<'PY'
+import tomllib,sys
+with open('pyproject.toml','rb') as f:
+    d=tomllib.load(f)
+print(d['tool']['poetry']['version'])
+PY
+)
+          echo "Pyproject: $PYPROJECT_VERSION"
+          if [ "v$PYPROJECT_VERSION" != "$TAG_VERSION" ]; then
+            echo "Tag version does not match pyproject version" >&2
+            exit 1
+          fi
+          echo "version=$PYPROJECT_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Build package
+        run: |
+          poetry build
+
+      - name: Publish to PyPI
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          poetry publish --username __token__ --password $POETRY_PYPI_TOKEN_PYPI
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: fastapi-filter ${{ steps.version.outputs.version }}
+          draft: false
+          prerelease: false

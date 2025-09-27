@@ -1,0 +1,125 @@
+[project]
+name = "fastapi-filter"
+
+[tool.poetry]
+name = "fastapi-filter"
+version = "0.1.0"
+description = "A filter library for FastAPI with SQLAlchemy support."
+authors = ["er5bus <er5bus@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+  { include = "fastapi_filters" }
+]
+classifiers = [
+    "Natural Language :: English",
+    "Framework :: FastAPI",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.urls]
+Homepage = "https://github.com/py-library/fastapi_filters"
+Repository = "https://github.com/py-library/fastapi_filters"
+
+[tool.flynt]
+line-length = 120
+
+## mypy configuration is defined in setup.cfg to avoid duplicate/conflicting config.
+## If you prefer to manage mypy in pyproject, move the settings from setup.cfg here
+## and ensure overrides include a 'module' or 'module_regex' key as required by mypy.
+
+[tool.ruff]
+line-length = 120
+# Assume Python 3.9 to be compatible with typing.
+target-version = "py39"
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".nox",
+    ".ruff_cache",
+]
+
+
+[tool.ruff.lint]
+select = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "I",
+  "SIM",
+  "UP",
+]
+ignore = [
+  "A003",  # Argument name should be lowercase.
+  "B008",  # Do not perform function calls in argument defaults.
+  "D1",  # Missing docstring https://www.pydocstyle.org/en/2.1.1/error_codes.html.
+  "D203",  # 1 blank line required before class docstring.
+  "D213",  # Multi-line docstring summary should start at the second line.
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "I",
+  "SIM",
+  "UP",
+]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.isort]
+known-first-party = [
+  "sqalchmey_filter",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.poetry.dependencies]
+SQLAlchemy = {version = ">=1.4.36,<2.1.0", optional = true}
+fastapi = ">=0.100.0,<1.0"
+pydantic = {version = "^2.7.4", extras = ["email"]}
+python = ">=3.9,<4.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^1.10.1"
+pre-commit = "^3.7.1"
+pytest = "^8.2.2"
+pytest-cov = "^5.0.0"
+flake8 = "^7.1.1"
+
+[tool.poetry.extras]
+sqlalchemy = ["SQLAlchemy"]
+all = ["SQLAlchemy"]
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
