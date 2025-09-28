@@ -60,8 +60,14 @@ PY
       - name: Publish to PyPI
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
+          PYPI_FALLBACK_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
-          poetry publish --username __token__ --password $POETRY_PYPI_TOKEN_PYPI
+          TOKEN="${POETRY_PYPI_TOKEN_PYPI:-$PYPI_FALLBACK_TOKEN}"
+          if [ -z "$TOKEN" ]; then
+            echo "No PyPI token found. Set repository secret PYPI_API_TOKEN or API_TOKEN." >&2
+            exit 1
+          fi
+          poetry publish --username __token__ --password "$TOKEN"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
