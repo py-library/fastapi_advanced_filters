@@ -1,0 +1,19 @@
+coverage:
+  status:
+    project:
+      default:
+        # Let Codecov pick a target from history, fail only on meaningful drops
+        target: auto
+        threshold: 1%
+        if_ci_failed: error
+    patch:
+      default:
+        target: auto
+        threshold: 2%
+        if_ci_failed: error
+
+comment: false
+
+ignore:
+  - tests/**
+  - docs/**

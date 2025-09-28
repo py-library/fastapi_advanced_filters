@@ -10,13 +10,13 @@ To support a new Python type (e.g., `datetime`):
 
 ## Add New Operations
 
-1. Extend `OperationEnum` (see `fastapi_filters/src/enums.py`):
+1. Extend `OperationEnum` (see `fastapi_advanced_filters/src/enums.py`):
     ```python
     class OperationEnum(str, Enum):
         # ...existing...
         MYOP = "myop"
     ```
-2. Update `fastapi_filters/src/operation_mapping/sqlalchemy_mapping.py` to map the new operation to SQLAlchemy logic.
+2. Update `fastapi_advanced_filters/src/operation_mapping/sqlalchemy_mapping.py` to map the new operation to SQLAlchemy logic.
 
 ## Custom Methods
 

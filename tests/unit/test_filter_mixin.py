@@ -4,9 +4,9 @@ from typing import Annotated
 import pytest
 from pydantic import BaseModel, Field
 
-from fastapi_filters.src.data_classes import FieldCriteria
-from fastapi_filters.src.enums import LogicalOperator, OperationEnum
-from fastapi_filters.src.filters.mixins import FilterMixin
+from fastapi_advanced_filters.data_classes import FieldCriteria
+from fastapi_advanced_filters.enums import LogicalOperator, OperationEnum
+from fastapi_advanced_filters.filters.mixins import FilterMixin
 
 
 class DummyFilter(FilterMixin, BaseModel):

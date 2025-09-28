@@ -3,9 +3,9 @@ from typing import Annotated
 import pytest
 from pydantic import BaseModel, Field
 
-from fastapi_filters.src.data_classes import SortBy
-from fastapi_filters.src.enums import OrderEnum
-from fastapi_filters.src.filters.mixins import SortingMixin
+from fastapi_advanced_filters.data_classes import SortBy
+from fastapi_advanced_filters.enums import OrderEnum
+from fastapi_advanced_filters.filters.mixins import SortingMixin
 
 
 class DummySort(SortingMixin, BaseModel):

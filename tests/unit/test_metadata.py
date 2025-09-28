@@ -1,5 +1,5 @@
-from fastapi_filters.src.data_classes import FieldCriteria, Selectable, SortBy
-from fastapi_filters.src.enums import OperationEnum
+from fastapi_advanced_filters.data_classes import FieldCriteria, Selectable, SortBy
+from fastapi_advanced_filters.enums import OperationEnum
 
 
 def test_sortby_alias_camelcase_cache_and_access():

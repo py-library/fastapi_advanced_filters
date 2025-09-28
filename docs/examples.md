@@ -25,7 +25,7 @@ Give the filter the model and list the fields you want to filter. This creates
 query parameters like `first_name__ilike`, `age__gte`, `age__lte`, etc.
 
 ```python
-from fastapi_filters import BaseFilter
+from fastapi_advanced_filters import BaseFilter
 
 class UserFilter(BaseFilter):
     class FilterConfig:
@@ -65,7 +65,7 @@ def get_users(filters: UserFilter = Depends(), db: Session = Depends(get_db)):
 Declare which attributes are sortable, then pass `?sorting=first_name,-age`.
 
 ```python
-from fastapi_filters import SortBy
+from fastapi_advanced_filters import SortBy
 
 class UserFilterWithSort(BaseFilter):
     class FilterConfig:
@@ -96,7 +96,7 @@ def get_users_sorted(
 Pass `?select=first_name,age` or `?select=all`.
 
 ```python
-from fastapi_filters import Selectable
+from fastapi_advanced_filters import Selectable
 
 class UserFilterWithSelect(BaseFilter):
     class FilterConfig:
@@ -126,7 +126,7 @@ def get_users_select(
 Pass `?q_search=john`.
 
 ```python
-from fastapi_filters import QSearch, OperationEnum, LogicalOperator
+from fastapi_advanced_filters import QSearch, OperationEnum, LogicalOperator
 
 class UserFilterWithQ(BaseFilter):
     class FilterConfig:
@@ -152,7 +152,7 @@ def get_users_q(
 Offset-based pagination: `?limit=20&offset=40`
 
 ```python
-from fastapi_filters import PaginationEnum
+from fastapi_advanced_filters import PaginationEnum
 
 class UserFilterWithPagination(BaseFilter):
     class FilterConfig:

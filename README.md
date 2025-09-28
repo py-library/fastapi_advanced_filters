@@ -1,4 +1,26 @@
-# fastapi-filter
+# fastapi_advanced_filters
+
+<!-- Badges -->
+[
+![CI](https://github.com/py-library/fastapi_advanced_filters/actions/workflows/main.yml/badge.svg)
+](https://github.com/py-library/fastapi_advanced_filters/actions/workflows/main.yml)
+[
+![Publish](https://github.com/py-library/fastapi_advanced_filters/actions/workflows/publish.yml/badge.svg)
+](https://github.com/py-library/fastapi_advanced_filters/actions/workflows/publish.yml)
+[
+![codecov](https://codecov.io/gh/py-library/fastapi_advanced_filters/branch/main/graph/badge.svg)
+](https://codecov.io/gh/py-library/fastapi_advanced_filters)
+[![Coverage](https://img.shields.io/codecov/c/gh/py-library/fastapi_advanced_filters?label=coverage&logo=codecov)](https://codecov.io/gh/py-library/fastapi_advanced_filters)
+[![PyPI](https://img.shields.io/pypi/v/fastapi_advanced_filters.svg)](https://pypi.org/project/fastapi_advanced_filters/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/fastapi_advanced_filters.svg)](https://pypi.org/project/fastapi_advanced_filters/)
+[![License](https://img.shields.io/pypi/l/fastapi_advanced_filters.svg)](./LICENSE)
+[![Downloads](https://img.shields.io/pypi/dm/fastapi_advanced_filters.svg)](https://pypi.org/project/fastapi_advanced_filters/)
+![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)
+![ruff](https://img.shields.io/badge/lint-ruff-46a0f5?logo=ruff&logoColor=white)
+![mypy](https://img.shields.io/badge/types-mypy-blue)
+![poetry](https://img.shields.io/badge/packaging-poetry-60A5FA)
+
+PyPI package name: `fastapi_advanced_filters`.
 
 Type-safe, declarative filtering for FastAPI with first-class SQLAlchemy support.
 
@@ -13,21 +35,21 @@ Python 3.9+ is supported.
 Using pip:
 
 ```bash
-pip install fastapi-filter
+pip install fastapi_advanced_filters
 ```
 
 If you plan to use SQLAlchemy features, install the extra:
 
 ```bash
-pip install "fastapi-filter[sqlalchemy]"
+pip install "fastapi_advanced_filters[sqlalchemy]"
 ```
 
 With Poetry:
 
 ```bash
-poetry add fastapi-filter
+poetry add fastapi_advanced_filters
 # or, with extras
-poetry add fastapi-filter -E sqlalchemy
+poetry add fastapi_advanced_filters -E sqlalchemy
 ```
 
 ## Quickstart
@@ -38,7 +60,7 @@ Define your SQLAlchemy model and a filter class. The filter class uses an inner 
 from sqlalchemy import Column, Integer, String, Boolean, Date
 from sqlalchemy.orm import declarative_base
 
-from fastapi_filters import (
+from fastapi_advanced_filters import (
 	BaseFilter,
 	FieldCriteria,
 	LogicalOperator,
@@ -163,3 +185,11 @@ Direct links:
 - Run tests: `pytest -q`
 - Lint/type: `pre-commit run --all-files`
 - Python: 3.9+
+
+### Coverage
+
+This project uses pytest-cov. Locally, you can view coverage in the terminal or generate XML/HTML reports:
+
+- Terminal summary (default): `pytest --cov`
+- XML for CI/Codecov: `pytest --cov --cov-report=xml`
+- HTML report: `pytest --cov --cov-report=html && open htmlcov/index.html`

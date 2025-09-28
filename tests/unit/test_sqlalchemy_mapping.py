@@ -1,8 +1,8 @@
 import pytest
 from sqlalchemy import Boolean, Column, Date, Integer, String
 
-from fastapi_filters.src.enums import LogicalOperator, OperationEnum, OrderEnum
-from fastapi_filters.src.operation_mapping.sqlalchemy_mapping import (
+from fastapi_advanced_filters.enums import LogicalOperator, OperationEnum, OrderEnum
+from fastapi_advanced_filters.operation_mapping.sqlalchemy_mapping import (
     LOGICAL_OP_MAPPING,
     OP_MAPPING,
     SORTING_MAPPING,
@@ -74,7 +74,7 @@ def test_between_for_numeric_and_date():
 
 
 def test_between_invalid_type_raises():
-    from fastapi_filters.src.operation_mapping import sqlalchemy_mapping as sm
+    from fastapi_advanced_filters.operation_mapping import sqlalchemy_mapping as sm
 
     col_str = Column("s", String())
     with pytest.raises(ValueError):
@@ -107,7 +107,7 @@ def test_is_and_isnull_op_mapping():
 
 def test_contains_array_branch_with_monkeypatch():
     # Force ARRAY isinstance check to be true and ensure any() is called
-    from fastapi_filters.src.operation_mapping import sqlalchemy_mapping as sm
+    from fastapi_advanced_filters.operation_mapping import sqlalchemy_mapping as sm
 
     class ArrayMarker:  # dummy marker class
         pass

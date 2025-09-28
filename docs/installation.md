@@ -1,25 +1,27 @@
 # Installation
 
-fastapi-filter supports Python 3.9+ and integrates with FastAPI and Pydantic v2.
+Package on PyPI: `fastapi_advanced_filters`.
+
+fastapi_advanced_filters supports Python 3.9+ and integrates with FastAPI and Pydantic v2.
 
 ## Using pip
 
 ```bash
-pip install fastapi-filter
+pip install fastapi_advanced_filters
 ```
 
 SQLAlchemy extras:
 
 ```bash
-pip install "fastapi-filter[sqlalchemy]"
+pip install "fastapi_advanced_filters[sqlalchemy]"
 ```
 
 ## Using Poetry
 
 ```bash
-poetry add fastapi-filter
+poetry add fastapi_advanced_filters
 # or with extras
-poetry add fastapi-filter -E sqlalchemy
+poetry add fastapi_advanced_filters -E sqlalchemy
 ```
 
 ## Optional dependencies
