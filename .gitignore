@@ -1,4 +1,6 @@
-.wiki/
+# keep the wiki submodule tracked
+!.gitmodules
+fastapi_advanced_filters.wiki/
 *.pyc
 __pycache__/
 .venv/
