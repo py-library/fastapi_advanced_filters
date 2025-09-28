@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="fastapi-filter",
+    name="fastapi_advanced_filters",
     version="0.1.0",
     description="A filter library for FastAPI with SQLAlchemy support.",
     author="Rami Sfari",

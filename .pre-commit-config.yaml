@@ -15,7 +15,7 @@ repos:
     hooks:
       - id: mypy
         name: mypy
-        entry: mypy ./fastapi_filters
+        entry: mypy ./fastapi_advanced_filters
         language: system
         types: [python]
         pass_filenames: false

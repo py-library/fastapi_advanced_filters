@@ -1,15 +1,15 @@
 [project]
-name = "fastapi-filter"
+name = "fastapi_advanced_filters"
 
 [tool.poetry]
-name = "fastapi-filter"
+name = "fastapi_advanced_filters"
 version = "0.1.0"
 description = "A filter library for FastAPI with SQLAlchemy support."
 authors = ["er5bus <er5bus@example.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [
-  { include = "fastapi_filters" }
+  { include = "fastapi_advanced_filters" }
 ]
 classifiers = [
     "Natural Language :: English",
@@ -25,8 +25,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/py-library/fastapi_filters"
-Repository = "https://github.com/py-library/fastapi_filters"
+Homepage = "https://github.com/py-library/fastapi_advanced_filters"
+Repository = "https://github.com/py-library/fastapi_advanced_filters"
 
 [tool.flynt]
 line-length = 120

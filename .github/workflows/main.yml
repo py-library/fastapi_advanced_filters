@@ -36,10 +36,10 @@ jobs:
           poetry install --no-root -E sqlalchemy
 
       - name: flake8
-        run: poetry run flake8 fastapi_filters tests
+        run: poetry run flake8 fastapi_advanced_filters tests
 
       - name: mypy
-        run: poetry run mypy fastapi_filters
+        run: poetry run mypy fastapi_advanced_filters
 
       - name: pytest
         run: poetry run pytest -q --cov

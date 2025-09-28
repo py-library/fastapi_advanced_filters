@@ -2,9 +2,9 @@ from typing import Annotated
 
 from pydantic import BaseModel, Field
 
-from fastapi_filters.src.data_classes import AdvancedQSearch, QSearch
-from fastapi_filters.src.enums import LogicalOperator, OperationEnum
-from fastapi_filters.src.filters.mixins import QSearchMixin
+from fastapi_advanced_filters.data_classes import AdvancedQSearch, QSearch
+from fastapi_advanced_filters.enums import LogicalOperator, OperationEnum
+from fastapi_advanced_filters.filters.mixins import QSearchMixin
 
 
 class DummyQ(QSearchMixin, BaseModel):

@@ -3,8 +3,8 @@ from typing import Annotated
 import pytest
 from pydantic import BaseModel, Field
 
-from fastapi_filters.src.data_classes import Selectable
-from fastapi_filters.src.filters.mixins import SelectMixin
+from fastapi_advanced_filters.data_classes import Selectable
+from fastapi_advanced_filters.filters.mixins import SelectMixin
 
 
 class DummySelect(SelectMixin, BaseModel):

@@ -1,6 +1,6 @@
 import pytest
 
-from fastapi_filters.src.utils import (
+from fastapi_advanced_filters.utils import (
     to_camel_case,
     to_snake_case,
     validate_selectable_schema,

@@ -1,4 +1,4 @@
-# fastapi-filter documentation
+# fastapi_advanced_filters documentation
 
 A flexible, type-safe filtering system for SQLAlchemy models, designed for FastAPI and Pydantic v2.
 
@@ -19,7 +19,7 @@ Back to project overview: [../README.md](../README.md)
 ## Quick Example
 
 ```python
-from fastapi_filters import BaseFilter, FieldCriteria, OperationEnum
+from fastapi_advanced_filters import BaseFilter, FieldCriteria, OperationEnum
 
 class UserFilter(BaseFilter):
     class FilterConfig:

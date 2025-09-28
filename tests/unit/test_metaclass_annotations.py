@@ -1,12 +1,12 @@
-from fastapi_filters.src.data_classes import FieldCriteria
-from fastapi_filters.src.enums import OperationEnum, PaginationEnum
-from fastapi_filters.src.filter_metaclass.helpers import (
+from fastapi_advanced_filters.data_classes import FieldCriteria
+from fastapi_advanced_filters.enums import OperationEnum, PaginationEnum
+from fastapi_advanced_filters.filter_metaclass.helpers import (
     generate_annotations_for_pagination,
     generate_annotations_for_qsearch,
     generate_annotations_for_selectable_fields,
     generate_annotations_for_sortable_fields,
 )
-from fastapi_filters.src.filter_metaclass.metaclass import FilterMetaClass
+from fastapi_advanced_filters.filter_metaclass.metaclass import FilterMetaClass
 
 
 def test_helpers_return_none_when_not_configured():

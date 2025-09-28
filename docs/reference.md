@@ -1,6 +1,6 @@
 # API Reference
 
-This document summarizes the public API exposed by `fastapi-filter` for building filter models.
+This document summarizes the public API exposed by `fastapi_advanced_filters` for building filter models.
 
 ## BaseFilter
 
@@ -54,7 +54,7 @@ This document summarizes the public API exposed by `fastapi-filter` for building
 These are available at module import:
 
 ```python
-from fastapi_filters import (
+from fastapi_advanced_filters import (
     SQLALCHEMY_LOGICAL_OP_MAPPING,
     SQLALCHEMY_OP_MAPPING,
     SQLALCHEMY_SORTING_MAPPING,

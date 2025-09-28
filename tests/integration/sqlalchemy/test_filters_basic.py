@@ -3,8 +3,8 @@ from datetime import date
 import pytest
 from sqlalchemy import or_
 
-from fastapi_filters.src.enums import OperationEnum
-from fastapi_filters.src.operation_mapping.sqlalchemy_mapping import OP_MAPPING
+from fastapi_advanced_filters.enums import OperationEnum
+from fastapi_advanced_filters.operation_mapping.sqlalchemy_mapping import OP_MAPPING
 from tests._utils import assert_sql_list_equal
 from tests.integration.sqlalchemy.models_and_filters import (
     User,

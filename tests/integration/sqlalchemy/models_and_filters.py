@@ -5,7 +5,7 @@ from sqlalchemy import Boolean, Column, Date, Enum, Integer, String
 from sqlalchemy.dialects.postgresql import ARRAY as PG_ARRAY
 from sqlalchemy.orm import Mapped, declarative_base
 
-from fastapi_filters import (
+from fastapi_advanced_filters import (
     AdvancedQSearch,
     BaseFilter,
     FieldCriteria,

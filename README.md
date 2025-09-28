@@ -1,4 +1,6 @@
-# fastapi-filter
+# fastapi_advanced_filters
+
+PyPI package name: `fastapi_advanced_filters`.
 
 Type-safe, declarative filtering for FastAPI with first-class SQLAlchemy support.
 
@@ -13,21 +15,21 @@ Python 3.9+ is supported.
 Using pip:
 
 ```bash
-pip install fastapi-filter
+pip install fastapi_advanced_filters
 ```
 
 If you plan to use SQLAlchemy features, install the extra:
 
 ```bash
-pip install "fastapi-filter[sqlalchemy]"
+pip install "fastapi_advanced_filters[sqlalchemy]"
 ```
 
 With Poetry:
 
 ```bash
-poetry add fastapi-filter
+poetry add fastapi_advanced_filters
 # or, with extras
-poetry add fastapi-filter -E sqlalchemy
+poetry add fastapi_advanced_filters -E sqlalchemy
 ```
 
 ## Quickstart
@@ -38,7 +40,7 @@ Define your SQLAlchemy model and a filter class. The filter class uses an inner 
 from sqlalchemy import Column, Integer, String, Boolean, Date
 from sqlalchemy.orm import declarative_base
 
-from fastapi_filters import (
+from fastapi_advanced_filters import (
 	BaseFilter,
 	FieldCriteria,
 	LogicalOperator,
