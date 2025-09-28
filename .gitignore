@@ -1,3 +1,13 @@
+.wiki/
+*.pyc
+__pycache__/
+.venv/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+dist/
+htmlcov/
+coverage.xml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

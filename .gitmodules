@@ -1,0 +1,3 @@
+[submodule "fastapi_advanced_filters.wiki"]
+	path = fastapi_advanced_filters.wiki
+	url = https://github.com/py-library/fastapi_advanced_filters.wiki.git
